@@ -236,8 +236,8 @@ export class Client extends EventEmitter {
         extraHeaders = options;
         options = temp;
       }
-      this._invoke(method, args, location, (error, result, rawResponse, soapHeader, rawRequest) => {
-        callback(error, result, rawResponse, soapHeader, rawRequest);
+      this._invoke(method, args, location, (error, result, rawResponse, soapHeader, rawRequest, response) => {
+        callback(error, result, rawResponse, soapHeader, rawRequest, response);
       }, options, extraHeaders);
     };
   }
@@ -325,7 +325,7 @@ export class Client extends EventEmitter {
         });
       }
 
-      callback(null, result, body, obj.Header, xml);
+      callback(null, result, body, obj.Header, xml, response);
     };
 
     const parseSync = (body, response) => {

@@ -10,7 +10,7 @@ export interface IHeaders {
 export type ISoapMethod = SoapMethod;
 export type SoapMethod = (
   args: any,
-  callback: (err: any, result: any, rawResponse: any, soapHeader: any, rawRequest: any) => void,
+  callback: (err: any, result: any, rawResponse: any, soapHeader: any, rawRequest: any, response?: any) => void,
   options?: any,
   extraHeaders?: any,
 ) => void;
